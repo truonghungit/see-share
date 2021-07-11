@@ -22,6 +22,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         },
         body: {
           margin: 0,
+          paddingTop: '60px',
         },
         img: {
           borderStyle: `none`,

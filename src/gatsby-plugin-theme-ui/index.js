@@ -235,6 +235,15 @@ const theme = merge(tailwind, {
       backgroundColor: 'rgba(8, 9, 10, 0.05)'
     },
   },
+  header: {
+    height: 60,
+    position: "fixed",
+    top: '0px',
+    left: '0px',
+    right: '0px',
+    boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.05)",
+    backgroundColor: `background`
+  },
   tags: {
     item: {
       display: 'block',

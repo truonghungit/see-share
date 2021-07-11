@@ -16,7 +16,7 @@ const Sidebar = ({ tags }: SidebarProps) => {
   const { tagsPath, basePath } = useBlogConfig();
 
   return (
-    <div sx={{ position: 'sticky', top: 5 }}>
+    <div sx={{ position: 'sticky', top: 'calc(60px + 1rem)' }}>
       <nav>
         <TLink
           as={Link}
