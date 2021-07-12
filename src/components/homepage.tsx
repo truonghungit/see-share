@@ -55,6 +55,7 @@ const Homepage = ({ posts, tags }: PostsProps) => {
 
         <aside
           sx={{
+            display: ['none', 'none', 'none', 'block'],
             pr: [3],
             flexBasis: 'sidebar'
           }}>
@@ -64,6 +65,10 @@ const Homepage = ({ posts, tags }: PostsProps) => {
           sx={{
             flexGrow: 1,
             flexBasis: 0,
+            maxWidth: '720px',
+            display: 'flex',
+            flexDirection: 'column',
+            margin: 'auto',
           }}>
 
           <header>
