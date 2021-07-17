@@ -12,11 +12,11 @@ type SidebarProps = {
   }[]
 }
 
-const Sidebar = ({ tags }: SidebarProps) => {
+const Sidebar = ({ isSticky }) => {
   const { tagsPath, basePath } = useBlogConfig();
 
   return (
-    <div sx={{ position: 'sticky', top: 'calc(60px + 1rem)' }}>
+    <div sx={{ position: isSticky ? 'sticky' : 'unset', top: 'calc(60px + 1rem)' }}>
       <nav>
         <TLink
           as={Link}
@@ -56,7 +56,7 @@ const Sidebar = ({ tags }: SidebarProps) => {
         <TLink
           as={Link}
           sx={{ variant: `tags.item`, display: 'flex', alignItems: 'center' }}
-          href={replaceSlashes(`/${basePath}/contact`)}
+          href={replaceSlashes(`/${basePath}/about`)}
         >
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24">
@@ -67,10 +67,10 @@ const Sidebar = ({ tags }: SidebarProps) => {
               </g>
             </svg>
           </span>
-          <span sx={{ ml: 2 }}>Contact</span>
+          <span sx={{ ml: 2 }}>About</span>
         </TLink>
       </nav>
-      <nav>
+      {/* <nav>
         <header sx={{ p: [2] }}>
           <h3 sx={{ mb: 0 }}>Tags</h3>
         </header>
@@ -85,7 +85,7 @@ const Sidebar = ({ tags }: SidebarProps) => {
             </TLink>
           ))}
         </div>
-      </nav>
+      </nav> */}
     </div>
   )
 }

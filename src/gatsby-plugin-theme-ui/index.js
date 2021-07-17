@@ -7,12 +7,20 @@ const theme = merge(tailwind, {
   config: {
     useCustomProperties: true,
   },
+  breakpoints: [
+    "576px",
+    "768px",
+    "992px",
+    "1200px",
+    "1400px"
+  ],
   colors: {
     primary: tailwind.colors.purple[7],
     secondary: `#5f6c80`,
     toggleIcon: tailwind.colors.gray[8],
     heading: tailwind.colors.black,
     divide: tailwind.colors.gray[4],
+    background: `#eef0f1`,
     modes: {
       dark: {
         text: tailwind.colors.gray[4],
@@ -44,7 +52,7 @@ const theme = merge(tailwind, {
     circle: 99999
   },
   sizes: {
-    sidebar: 240,
+    sidebar: ['240px', '240px', '210px', '240px', '240px'],
   },
   styles: {
     root: {
@@ -158,8 +166,8 @@ const theme = merge(tailwind, {
   },
   layout: {
     container: {
-      padding: [3, 4],
-      maxWidth: `1024px`,
+      padding: [3],
+      maxWidth: `890px`,
     },
   },
   text: {
@@ -241,8 +249,8 @@ const theme = merge(tailwind, {
     top: '0px',
     left: '0px',
     right: '0px',
-    boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.05)",
-    backgroundColor: `background`
+    boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
+    backgroundColor: `#fff`
   },
   tags: {
     item: {
@@ -262,7 +270,8 @@ const theme = merge(tailwind, {
       p: [3],
       borderRadius: 'default',
       boxShadow: 'card',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      backgroundColor: '#fff'
     },
     sunken: {
       bg: 'sunken',

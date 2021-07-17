@@ -41,7 +41,7 @@ const Tags = ({ list }: PostsProps) => {
             <TLink
               as={Link}
               sx={{ variant: `links.listItem`, mr: 2 }}
-              to={replaceSlashes(`/${basePath}/${tagsPath}/${kebabCase(listItem.fieldValue)}`)}
+              href={replaceSlashes(`/${basePath}/${tagsPath}/${kebabCase(listItem.fieldValue)}`)}
             >
               {listItem.fieldValue} <span sx={{ color: `secondary` }}>({listItem.totalCount})</span>
             </TLink>

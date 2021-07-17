@@ -22,9 +22,9 @@ type ListingProps = {
 
 const Listing = ({ posts, showTags = true }: ListingProps) => (
   <section sx={{ mb: [5, 6, 7] }}>
-    {posts.map((post) => (
+    {posts.map((post, index) => (
       <div sx={{ mb: 3 }}>
-        <BlogListItem key={post.slug} post={post} showTags={showTags} showBanner={true} />
+        <BlogListItem key={post.slug} post={post} showTags={showTags} showBanner={index === 0} />
       </div>
     ))}
   </section>

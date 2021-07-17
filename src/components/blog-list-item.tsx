@@ -26,8 +26,10 @@ const BlogListItem = ({ post, showTags = true, showBanner = false }: BlogListIte
   <Card>
     {
       showBanner && post.banner?.childImageSharp &&
-      <div sx={{ margin: '-1rem -1rem 0 -1rem', mb: 3 }}>
-        <Image src={post.banner.childImageSharp.original.src} />
+      <div sx={{ margin: '-1rem -1rem 0 -1rem', mb: 3, maxHeight: '290px', overflow: 'hidden' }}>
+        <TLink as={Link} href={post.slug}>
+          <Image src={post.banner.childImageSharp.original.src} />
+        </TLink>
       </div>
     }
     <TLink as={Link} href={post.slug} sx={{ fontSize: [1, 2, 3], color: `text` }}>
@@ -38,27 +40,25 @@ const BlogListItem = ({ post, showTags = true, showBanner = false }: BlogListIte
         {post.title}
       </Heading>
     </TLink>
-    <Text>
-      <TLink href={post.slug} sx={{ color: `text` }}>
-        <Box sx={{ mt: 3 }}>{post.description}</Box>
-      </TLink>
-      <Box sx={{ mt: 3 }}>
-        {post.tags && showTags && (
-          <React.Fragment>
-            <ItemTags tags={post.tags} />
-          </React.Fragment>
-        )}
+    <TLink href={post.slug} sx={{ color: `text` }}>
+      <Box sx={{ mt: 3 }}>{post.description}</Box>
+    </TLink>
+    <Box sx={{ mt: 3 }}>
+      {post.tags && showTags && (
+        <React.Fragment>
+          <ItemTags tags={post.tags} />
+        </React.Fragment>
+      )}
+    </Box>
+    <Flex sx={{
+      mt: 3,
+      justifyContent: "space-between"
+    }}>
+      <time>{post.date}</time>
+      <Box>
+        {post.timeToRead && <span>{post.timeToRead} min read</span>}
       </Box>
-      <Flex sx={{
-        mt: 3,
-        justifyContent: "space-between"
-      }}>
-        <time>{post.date}</time>
-        <Box>
-          {post.timeToRead && <span>{post.timeToRead} min read</span>}
-        </Box>
-      </Flex>
-    </Text>
+    </Flex>
   </Card>
 )
 
