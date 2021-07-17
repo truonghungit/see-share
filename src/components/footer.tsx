@@ -9,9 +9,10 @@ const Footer = () => {
     <footer
       sx={{
         boxSizing: `border-box`,
-        display: `flex`,
-        justifyContent: `space-between`,
-        mt: [6],
+        display: `block`,
+        textAlign: `center`,
+        mt: [3],
+        pb: [3],
         color: `secondary`,
         a: {
           variant: `links.secondary`,

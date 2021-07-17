@@ -250,7 +250,8 @@ const theme = merge(tailwind, {
     left: '0px',
     right: '0px',
     boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
-    backgroundColor: `#fff`
+    backgroundColor: `#fff`,
+    zIndex: 999
   },
   tags: {
     item: {

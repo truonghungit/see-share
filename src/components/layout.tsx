@@ -53,8 +53,6 @@ const Layout = ({ children, className = `` }: LayoutProps) => {
     />
   );
 
-  console.log(isSidenavOpen);
-
   return (
     <React.Fragment>
       {global}
